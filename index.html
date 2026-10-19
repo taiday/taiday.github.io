@@ -5,6 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="intro.css" />
+		<link rel="stylesheet" href="garden.css" />
 
 		<link
 			rel="stylesheet"
@@ -13,29 +15,50 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<title>Chúc mừng 20/10</title>
+		<title>Ấn đi chờ chi</title>
+		<meta property="og:title" content="Ấn đi chờ chi" />
+		<meta property="og:type" content="website" />
+		<meta name="description" content="" />
 	</head>
-	<body>
+	<body class="intro-lock">
+		<!-- INTRO: bấm để mở thiệp -->
+		<div id="intro">
+			<canvas id="introStars" class="full"></canvas>
+			<div id="roseBall">
+				<div id="roseFloat"><canvas id="roseCanvas"></canvas></div>
+			</div>
+			<canvas id="introBloom" class="full"></canvas>
+			<p class="intro-text">Có một điều bất ngờ<br />đang chờ bạn…</p>
+			<button id="introBtn" type="button">Chạm để mở thiệp 💌</button>
+		</div>
+		<audio id="bgm" src="song.mp3" preload="auto" loop></audio>
+		<button id="musicBtn" type="button" hidden>♫</button>
 		<div class="container">
 			<div class="boxcontainer">
-				<div class="image">
-					<img src="flag.png" alt="" />
-				</div>
+				<div class="fx-back" id="fxBack"></div>
 				<div class="text-happybirthday">
 					<div class="title-2010">
-						<span class="t-line1">Chúc mừng</span>
-						<span class="t-line2">20/10</span>
+						<div class="rib">
+							<div class="tl"></div>
+							<div class="tr"></div>
+							<div class="mid"></div>
+							<b class="rib-text">Chúc mừng 20/10</b>
+						</div>
 					</div>
+				</div>
+				<div class="garden">
+					<div class="tl-wrap t1"><img src="deco_tulip2.png" alt="" /></div>
+					<div class="tl-wrap t2"><img src="deco_tulip1.png" alt="" /></div>
+					<div class="tl-wrap t3"><img src="deco_tulip2.png" alt="" /></div>
+					<div class="tl-wrap t4"><img src="deco_tulip1.png" alt="" /></div>
 				</div>
 				<div class="cake">
-					<img src="cake.png" alt="" />
-				</div>
-				<div class="box-balloon">
-					<div class="balloon-item1">
-						<img src="balloon.png" alt="" />
-					</div>
-					<div class="balloon-item1">
-						<img src="balloon.png" alt="" />
+					<div class="cats">
+						<img class="cat c-lily" src="cat_lily.png" alt="" />
+						<img class="cat c-tulip" src="cat_tulip.png" alt="" />
+						<img class="cat c-blue" src="cat_blue.png" alt="" />
+						<img class="cat c-red" src="cat_red.png" alt="" />
+						<img class="cat c-gun" src="cat_gun.png" alt="" />
 					</div>
 				</div>
 				<div class="box-cloud">
@@ -45,27 +68,6 @@
 					<div class="cloud">
 						<img src="cloud.png" alt="" />
 					</div>
-				</div>
-				<div class="box-firework">
-					<div class="firework">
-						<img src="firework.png" alt="" />
-						<img src="firework1.png" alt="" id="firework1" />
-					</div>
-					<div class="firework">
-						<img src="firework.png" alt="" />
-						<img src="firework1.png" alt="" id="firework1" />
-					</div>
-				</div>
-				<div class="paperCannons">
-					<img src="paperCannons1.png" alt="" />
-				</div>
-				<div class="box-giftbox">
-					<img src="giftbox.png" alt="" />
-					<img src="giftbox.png" alt="" />
-					<img src="giftbox.png" alt="" />
-					<img src="giftbox.png" alt="" />
-					<img src="giftbox.png" alt="" />
-					<img src="giftbox.png" alt="" />
 				</div>
 				<div class="mail">
 					<i class="fa-regular fa-envelope"></i>
@@ -78,6 +80,7 @@
 						<img src="cute.png" alt="" />
 					</div>
 				</div>
+				<div class="fx-front" id="fxFront"></div>
 			</div>
 			<div class="boxMail">
 				<i class="fa-solid fa-xmark"></i>
@@ -119,6 +122,8 @@
 				</div>
 			</div>
 		</div>
+			<script src="garden.js"></script>
+		<script src="intro.js"></script>
 	</body>
 	<script>
 		document.addEventListener('mousemove', function (e) {
